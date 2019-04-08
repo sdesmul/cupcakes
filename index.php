@@ -6,7 +6,7 @@
  * Time: 10:01 AM
  */
 
-$flavors[] =array("grasshopper"=> "The Grasshopper", "maple" => "Whiskey Maple Bacon",
+$flavors =array("grasshopper"=> "The Grasshopper", "maple" => "Whiskey Maple Bacon",
     "carrot" => "Carrot Walnut", "caramel" => "Salted Caramel Cupcake", "velvet" => "Red Velvet",
     "lemon" => "Lemon Drop", "tiramisu" => "Tiramisu");
 ?>
@@ -30,6 +30,12 @@ $flavors[] =array("grasshopper"=> "The Grasshopper", "maple" => "Whiskey Maple B
     <br>
 
     <p>Cupcake Flavors:</p>
+    <?php
+    foreach($flavors as $key => $value){
+        echo '<label><input type="checkbox" name="charges" value="' . $key . '">';
+        echo ''.$value.'</label><br>';
+    }
+    ?>
 
 </form>
 </body>
