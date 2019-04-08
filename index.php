@@ -6,6 +6,9 @@
  * Time: 10:01 AM
  */
 
+$flavors[] =array("grasshopper"=> "The Grasshopper", "maple" => "Whiskey Maple Bacon",
+    "carrot" => "Carrot Walnut", "caramel" => "Salted Caramel Cupcake", "velvet" => "Red Velvet",
+    "lemon" => "Lemon Drop", "tiramisu" => "Tiramisu");
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,5 +21,16 @@
 </head>
 <body>
 
+<h1>Cupcake Fundraiser</h1>
+
+<form>
+
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" id="name" placeholder="Please Input Your Name">
+    <br>
+
+    <p>Cupcake Flavors:</p>
+
+</form>
 </body>
 </html>
