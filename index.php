@@ -4,6 +4,9 @@
  * User: Samantha DeSmul
  * Date: 4/8/2019
  * Time: 10:01 AM
+ * URL: http://sdesmul.greenriverdev.com/IT328/cupcakes/index.php
+ * Description: This is a website for a cupcake fundraiser. The purpose
+ * of this website is to practice PHP
  */
 //turn on error reporting
 ini_set('display_errors', 1);
@@ -31,10 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //if there are no errors
     if (empty($errors)) {
+
+        //print out the order summary
         $selected = $_POST['flavor'];
         echo "Thank you," . $_POST['name'] . ", for your order!";
         echo "<br>";
         echo "Order Summary:";
+
+        //echo out all the flavors chosen
         foreach ($flavors as $key => $value) {
             echo '<ul>';
             if (in_array($key, $_POST['flavor'])) {
@@ -73,13 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p><?php echo !empty($errors['flavor']) ? $errors['flavor'] : ""; ?></p>
     <p>Cupcake Flavors:</p>
     <?php
+    //print out the flavors array as checkboxes, make them sticky
     $selected = array();
     foreach ($flavors as $key => $value) {
         echo '<label><input type="checkbox" name="flavor[]" value="' . $key . '" ' . (in_array($key, isset($_POST['flavor']) ? $_POST['flavor'] : $selected) ? "checked" : "x") . '>';
         echo $value . '</label><br>';
     }
-
-    $flavorsChosen = [];
 
 
     ?>
